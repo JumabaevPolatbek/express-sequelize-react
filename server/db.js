@@ -141,9 +141,6 @@ db.postAuthorHasCategoryTranslate =
 		DataTypes,
 		Model
 	);
-db.sequelize.sync({ force: false }).then(() => {
-	console.log('yes re-sync done!');
-});
 
 // Realtionships
 
@@ -160,9 +157,51 @@ db.posts.belongsTo(db.images);
 // many to many
 //roles permissions
 db.roles.belongsToMany(db.permissions, {
-	through: db.rolesPermissions,
+	through: 'roles_has_permissions',
+	foreignKey: 'role_id',
 });
 db.permissions.belongsToMany(db.roles, {
-	through: db.rolesPermissions,
+	through: 'roles_has_permissions',
+	foreignKey: 'permission_id',
+});
+
+//user roles
+db.users.hasMany(db.UserRoles, {
+	foreignKey: 'user_id',
+});
+db.rolesPermissions.hasMany(db.UserRoles, {
+	foreignKey: 'role_id',
+});
+db.UserRoles
+//other images
+db.posts.belongsToMany(db.images, {
+	through: 'other_images',
+	foreignKey: 'post_id',
+});
+db.images.belongsToMany(db.posts, {
+	through: 'other_images',
+	foreignKey: 'image_id',
+});
+
+//post author category translate
+db.users.hasMany(db.postAuthorHasCategoryTranslate, {
+	foreignKey: 'user_id',
+});
+db.posts.hasMany(db.postAuthorHasCategoryTranslate, {
+	foreignKey: 'post_id',
+});
+db.categories.hasMany(db.postAuthorHasCategoryTranslate, {
+	foreignKey: 'category_id',
+});
+db.languages.hasMany(db.postAuthorHasCategoryTranslate, {
+	foreignKey: 'language_id',
+});
+// db.postAuthorHasCategoryTranslate.belongsTo(db.users);
+db.postAuthorHasCategoryTranslate.belongsTo(db.posts);
+db.postAuthorHasCategoryTranslate.belongsTo(db.categories);
+db.postAuthorHasCategoryTranslate.belongsTo(db.languages);
+
+db.sequelize.sync({ force: false }).then(() => {
+	console.log('yes re-sync done!');
 });
 module.exports = db;
