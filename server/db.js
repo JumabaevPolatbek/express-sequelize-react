@@ -64,7 +64,7 @@ db.rolesPermissions =
 	);
 
 //user_has_role_permissions
-db.UserRoles = require('./models/many-to-many/users_roles')(
+db.userRoles = require('./models/many-to-many/users_roles')(
 	sequelize,
 	DataTypes,
 	Model
@@ -166,13 +166,15 @@ db.permissions.belongsToMany(db.roles, {
 });
 
 //user roles
-db.users.hasMany(db.UserRoles, {
+db.users.belongsToMany(db.userRoles, {
+	through: 'users_roles',
 	foreignKey: 'user_id',
 });
-db.rolesPermissions.hasMany(db.UserRoles, {
+db.rolesPermissions.belongsToMany(db.userRoles, {
+	through: 'users_roles',
 	foreignKey: 'role_id',
 });
-db.UserRoles
+
 //other images
 db.posts.belongsToMany(db.images, {
 	through: 'other_images',
@@ -196,12 +198,12 @@ db.categories.hasMany(db.postAuthorHasCategoryTranslate, {
 db.languages.hasMany(db.postAuthorHasCategoryTranslate, {
 	foreignKey: 'language_id',
 });
-// db.postAuthorHasCategoryTranslate.belongsTo(db.users);
+db.postAuthorHasCategoryTranslate.belongsTo(db.users);
 db.postAuthorHasCategoryTranslate.belongsTo(db.posts);
 db.postAuthorHasCategoryTranslate.belongsTo(db.categories);
 db.postAuthorHasCategoryTranslate.belongsTo(db.languages);
 
-db.sequelize.sync({ force: false }).then(() => {
+db.sequelize.sync({ force: true }).then(() => {
 	console.log('yes re-sync done!');
 });
 module.exports = db;

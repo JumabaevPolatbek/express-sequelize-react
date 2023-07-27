@@ -25,4 +25,5 @@ module.exports = (sequelize, DataTypes, Model) => {
 			tableName: 'roles_has_permissions',
 		}
 	);
+	return model;
 };
