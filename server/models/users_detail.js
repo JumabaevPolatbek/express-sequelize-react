@@ -6,7 +6,6 @@ module.exports = (sequelize, DataTypes, Model) => {
 			id: {
 				type: DataTypes.INTEGER,
 				primaryKey: true,
-				autoIncrement: true,
 				allowNull: false,
 			},
 			firstName: {
@@ -18,13 +17,9 @@ module.exports = (sequelize, DataTypes, Model) => {
 				allowNull: false,
 			},
 			email: {
-				type: DataTypes.STRING,
+				type: DataTypes.STRING(60),
 				unique: true,
 				allowNull: false,
-			},
-			image: {
-				type: DataTypes.INTEGER,
-				allowNull: true,
 			},
 			info: {
 				type: DataTypes.BLOB,
@@ -46,5 +41,6 @@ module.exports = (sequelize, DataTypes, Model) => {
 			tableName: 'users_detail',
 		}
 	);
+
 	return model;
 };

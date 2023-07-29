@@ -9,9 +9,9 @@ module.exports = (sequelize, DataTypes, Model) => {
 				primaryKey: true,
 			},
 			username: {
-				type: DataTypes.STRING,
+				type: DataTypes.STRING(55),
 				allowNull: false,
-				primaryKey: true,
+				unique: true,
 			},
 			password_hash: {
 				type: DataTypes.STRING,
@@ -25,6 +25,8 @@ module.exports = (sequelize, DataTypes, Model) => {
 		{
 			sequelize: sequelize,
 			timestamps: false,
+			modelName: 'users',
+			tableName: 'users',
 		}
 	);
 
