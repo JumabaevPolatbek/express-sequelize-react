@@ -17,7 +17,7 @@ then(json=>console.log(json))
 {message: username has created}
 </pre>
 </details>
-## Created Admin User
+ Created Admin User
 
 ```
 fetch('http://localhost:3000/users/admin',{
