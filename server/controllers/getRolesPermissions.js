@@ -1,17 +1,8 @@
-const RolesPermissions = require('../models/index').roleHasPermissions;
-const roles = require('../models/index').roles;
-const permissions = require('../models/index').permissions;
+const getRolesPermission = require('../db/roles/getRolesPermission');
+
 module.exports = async (req, res) => {
     try {
-        const result = await roles.findAll({
-            where: {},
-            include: {
-                model: permissions,
-                through: {
-                    attributes: [],
-                },
-            },
-        });
+        const result = await getRolesPermission();
         res.status(200).json(result);
     } catch (err) {
         console.log(err);
