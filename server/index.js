@@ -3,6 +3,7 @@ const db = require('./models/index');
 const app = express();
 const bgcrypt = require('bcrypt');
 const salt = 10;
+const roles = require('./routes/roles');
 app.use(express.json());
 
 // app.get('/useradd', async (req, res) => {
@@ -13,13 +14,15 @@ app.use(express.json());
 //         console.log(error);
 //     }
 // });
-
+app.use('/role', roles);
 app.listen(3000, async () => {
-    try {
-        console.log('Server is running... and connected DB');
-        await db.sequelize.authenticate();
-    } catch (error) {
-        // console.log('server is running...');
-        console.log(error);
-    }
+	try {
+		console.log(
+			'Server is running... and connected DB'
+		);
+		await db.sequelize.authenticate();
+	} catch (error) {
+		// console.log('server is running...');
+		console.log(error);
+	}
 });
