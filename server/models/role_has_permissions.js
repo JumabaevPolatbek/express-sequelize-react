@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
                 // as: 'permissions',
             });
             this.belongsToMany(models.users_table, {
-                as: 'roles',
+                as: 'usersRole',
                 through: 'userRolesPermission',
                 foreignKey: {
                     allowNull: false,
