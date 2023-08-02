@@ -16,7 +16,7 @@ then(json=>console.log(json))
 <pre>
 {message: username has created}
 </pre>
-
+</details>
 ## Created Admin User
 
 ```
@@ -43,3 +43,4 @@ fetch('http://localhost:3000/users/admin',{
         message: 'username has added to administration group'
     }
 </pre>
+</details>
