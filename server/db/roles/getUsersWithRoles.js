@@ -26,6 +26,7 @@ module.exports = async () => {
                     attributes: {
                         exclude: ['role_id', 'permission_id'],
                     },
+                    order: [[{ model: rolesHasPermissions }]],
                 },
             ],
             attributes: {
