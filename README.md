@@ -12,7 +12,7 @@ headers:{'Content-type':'application/x-www-form-urlencoded;charset=UTF-8',}
 then(json=>console.log(json))
 ```
 
-<details><summary>Output</summary></details>
+<details><summary>Output</summary>
 <pre>
 {message: username has created}
 </pre>
@@ -37,7 +37,7 @@ fetch('http://localhost:3000/users/admin',{
 }).then(result=>result.json()).then(json=>console.log(json))
 ```
 
-<details><summary>Output</summary></details>
+<details><summary>Output</summary>
 <pre>
     {
         message: 'username has added to administration group'
