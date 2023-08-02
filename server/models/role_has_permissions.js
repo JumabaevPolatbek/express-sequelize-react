@@ -9,9 +9,16 @@ module.exports = (sequelize, DataTypes) => {
          */
         static associate(models) {
             // define association here
-            this.belongsTo(models.roles, { foreignKey: 'role_id' });
-            this.belongsTo(models.permissions, { foreignKey: 'permission_id' });
+            this.belongsTo(models.roles, {
+                foreignKey: 'role_id',
+                // as: 'roleAsPermission',
+            });
+            this.belongsTo(models.permissions, {
+                foreignKey: 'permission_id',
+                // as: 'permissionAsRole',
+            });
             this.belongsToMany(models.users_table, {
+                as: 'roles',
                 through: 'userRolesPermission',
                 foreignKey: {
                     allowNull: false,

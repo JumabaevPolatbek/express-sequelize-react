@@ -15,6 +15,7 @@ module.exports = (sequelize, DataTypes) => {
             });
             this.belongsTo(models.roleHasPermissions, {
                 foreignKey: 'role_id',
+                as: 'roles',
             });
         }
     }

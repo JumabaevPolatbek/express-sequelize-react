@@ -1,6 +1,8 @@
 const userRolesPermissinos = require('../models/index').userRolesPermission;
-const roles = require('../models/index').rolesHasPermissions;
+const roles = require('../models/index').roleHasPermissions;
 const users = require('../models/index').users_table;
+const permissions = require('../models/index').permissions;
+const role = require('../models/index').roles;
 module.exports = async (req, res) => {
     try {
         const result = await userRolesPermissinos.findAll({
@@ -11,11 +13,19 @@ module.exports = async (req, res) => {
                 },
                 {
                     model: roles,
-                    // as: 'user_role',
+                    as: 'roles',
+                    include: [
+                        {
+                            model: role,
+                        },
+                        {
+                            model: permissions,
+                        },
+                    ],
                 },
             ],
             attributes: {
-                exclude: ['user_id'],
+                exclude: ['user_id', 'role_id'],
             },
         });
         res.status(200).json(result);

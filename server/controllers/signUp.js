@@ -25,11 +25,14 @@ module.exports = async (req, res) => {
             password: req.body.password,
             email: req.body.email,
         });
-        const result = await user.addRoleHasPermissions(
-            rolesPermissions.id,
-            user.id
-        );
-        res.status(200).json(result);
+        await user
+            .addRoleHasPermissions(rolesPermissions.id, user.id)
+            .then((result) =>
+                res
+                    .status(200)
+                    .json({ message: result.username + 'has created' })
+            )
+            .catch((error) => res.status(400).json({ message: error.msg }));
     } catch (error) {
         console.log(error);
         res.status(400).json(error.msg);
