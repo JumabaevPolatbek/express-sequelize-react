@@ -9,7 +9,7 @@ GET localhost:3000/role
 ```
 
 <details>
-    <summary>Output</summary>
+    <summary>Response Output</summary>
     <pre>
     [
         {
@@ -58,6 +58,40 @@ GET localhost:3000/role
     </pre>
 </details>
 
+####Create role has permission
+
+```http
+POST localhost:3000/role/add
+```
+
+```
+<details>
+    <summary>Request body</summary>
+    <pre>
+        {
+            roleName:'creator',
+            permissions:{
+                create:true,
+                read:true,
+                update:true,
+                delete:true
+            }
+        }
+    </pre>
+</details>
+```
+
+<details>
+    <summary>
+        Response Output
+    </summary>
+    <pre>
+        {
+            message:'creator has created'
+        }
+    </pre>
+</details>
+
 ####Get group user with roles
 
 ```http
@@ -65,7 +99,7 @@ GET localhost:3000/role/users
 ```
 
 <details>
-    <summary>Output</summary>
+    <summary>Response Output</summary>
     <pre>
     [
         {
@@ -105,4 +139,33 @@ GET localhost:3000/role/users
         }
     ]
 </pre>
+</details>
+
+####User registration (signUp)
+
+```http
+POST localhost:3000/users/signup
+```
+
+```
+<details>
+    <summary>Request body</summary>
+    <pre>
+        {
+            username:'username',
+            password:'password',
+            email:'email@email.ru',
+            rolePermissionId:1
+        }
+    </pre>
+<details>
+```
+
+<details>
+    <summary>Response</summary>
+    <pre>
+        {
+            message: 'username' has added
+        }
+    </pre>
 </details>

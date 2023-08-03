@@ -33,16 +33,6 @@ module.exports = (sequelize, DataTypes) => {
             username: {
                 type: DataTypes.STRING,
                 allowNull: false,
-                // validate: {
-                //     max: 40,
-                //     isIn: {
-                //         args: [['en']],
-                //         msg: 'Letters must be in English',
-                //     },
-                //     notNull: {
-                //         msg: 'Please enter your name',
-                //     },
-                // },
             },
             password: {
                 type: DataTypes.STRING,
