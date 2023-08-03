@@ -139,11 +139,11 @@ GET localhost:3000/role/users
 </pre>
 </details>
 
-####User registration (signUp)
+####User registration signup
 
 ```http
 POST localhost:3000/users/signup
-```
+
 
 <details>
     <summary>
@@ -169,3 +169,4 @@ POST localhost:3000/users/signup
         }
     </pre>
 </details>
+```
