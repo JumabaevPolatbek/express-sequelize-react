@@ -1,8 +1,8 @@
-##Newspaper REST API
+#Newspaper REST API
 
-##API Reference
+#API Reference
 
-####Get Roles Has Permissions method GET
+#Get Roles Has Permissions method GET
 
 ```http
 GET localhost:3000/role
