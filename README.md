@@ -64,7 +64,6 @@ GET localhost:3000/role
 POST localhost:3000/role/add
 ```
 
-```
 <details>
     <summary>Request body</summary>
     <pre>
@@ -79,7 +78,6 @@ POST localhost:3000/role/add
         }
     </pre>
 </details>
-```
 
 <details>
     <summary>
@@ -147,7 +145,6 @@ GET localhost:3000/role/users
 POST localhost:3000/users/signup
 ```
 
-```
 <details>
     <summary>Request body</summary>
     <pre>
@@ -159,7 +156,6 @@ POST localhost:3000/users/signup
         }
     </pre>
 <details>
-```
 
 <details>
     <summary>Response</summary>
