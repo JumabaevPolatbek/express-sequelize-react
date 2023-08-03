@@ -169,3 +169,11 @@ POST localhost:3000/users/signup
         }
     </pre>
 </details>
+
+```http
+  GET /role
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `id`      | `string` | **Required**. Your API key |
