@@ -90,6 +90,20 @@ POST localhost:3000/role/add
     </pre>
 </details>
 
+####Delete role has permissions
+
+```http
+DELETE localhost:3000/role/del/{role_id}
+```
+
+<details>
+    <summary>Response Output</summary>
+    <pre>
+        {
+            message:'Role has deleted'
+        }
+    </pre>
+</details>
 ####Get group user with roles
 
 ```http
@@ -145,9 +159,13 @@ GET localhost:3000/role/users
 POST localhost:3000/users/signup
 ```
 
+```
+Request
+```
+
 <details>
     <summary>
-        Request body
+         body
     </summary>
     <pre>
         {
@@ -158,10 +176,12 @@ POST localhost:3000/users/signup
         }
     </pre>
 <details>
-
+```
+Response
+```
 <details>
     <summary>
-        Response Output
+        Output
     </summary>
     <pre>
         {
@@ -169,11 +189,3 @@ POST localhost:3000/users/signup
         }
     </pre>
 </details>
-
-```http
-  GET /role
-```
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `id`      | `string` | **Required**. Your API key |
