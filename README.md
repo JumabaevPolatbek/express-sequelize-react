@@ -146,7 +146,9 @@ POST localhost:3000/users/signup
 ```
 
 <details>
-    <summary>Request body</summary>
+    <summary>
+        Request body
+    </summary>
     <pre>
         {
             username:'username',
@@ -156,9 +158,11 @@ POST localhost:3000/users/signup
         }
     </pre>
 <details>
-####
+
 <details>
-    <summary>Response</summary>
+    <summary>
+        Response
+    </summary>
     <pre>
         {
             message: 'username' has added
