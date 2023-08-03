@@ -143,7 +143,7 @@ GET localhost:3000/role/users
 
 ```http
 POST localhost:3000/users/signup
-
+```
 
 <details>
     <summary>
@@ -161,7 +161,7 @@ POST localhost:3000/users/signup
 
 <details>
     <summary>
-        Response
+        Response Output
     </summary>
     <pre>
         {
@@ -169,4 +169,3 @@ POST localhost:3000/users/signup
         }
     </pre>
 </details>
-```
