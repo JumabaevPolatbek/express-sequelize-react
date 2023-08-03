@@ -6,6 +6,8 @@
 
 ```http
 GET localhost:3000/role
+```
+
 <details>
     <summary>Response Output</summary>
     <pre>
@@ -55,12 +57,12 @@ GET localhost:3000/role
     ]
     </pre>
 </details>
-```
 
 ####Create role has permission
 
 ```http
 POST localhost:3000/role/add
+```
 
 <details>
     <summary>Request body</summary>
@@ -87,13 +89,12 @@ POST localhost:3000/role/add
         }
     </pre>
 </details>
-```
 
 ####Get group user with roles
 
 ```http
 GET localhost:3000/role/users
-
+```
 
 <details>
     <summary>Response Output</summary>
@@ -137,13 +138,12 @@ GET localhost:3000/role/users
     ]
 </pre>
 </details>
-```
 
 ####User registration (signUp)
 
 ```http
 POST localhost:3000/users/signup
-
+```
 
 <details>
     <summary>Request body</summary>
@@ -156,7 +156,7 @@ POST localhost:3000/users/signup
         }
     </pre>
 <details>
-
+####
 <details>
     <summary>Response</summary>
     <pre>
@@ -165,4 +165,3 @@ POST localhost:3000/users/signup
         }
     </pre>
 </details>
-```
