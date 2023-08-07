@@ -1,4 +1,4 @@
-const getUsersWithRoles = require('../db/roles/getUsersWithRoles');
+const getUsersWithRoles = require('../utils/roles/getUsersWithRoles');
 
 module.exports = async (req, res) => {
     try {

@@ -9,14 +9,14 @@ module.exports = async (body) => {
 			email,
 			rolePermissionId,
 		} = body;
-		const hasPassword = await bgcrypt(password, salt);
+		const hasPassword = await bgcrypt.hashSync(password, salt);
 
 		const user = await User.create({
 			username: username,
 			password: hasPassword,
 			email: email,
 		});
-		const result = await user.addRoleHasPermissions(
+		const result = await user.addUser(
 			rolePermissionId,
 			user.id
 		);

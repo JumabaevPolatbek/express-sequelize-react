@@ -6,7 +6,7 @@ const salt = 10;
 const roles = require('./routes/roles');
 const users = require('./routes/users');
 app.use(express.json());
-
+const authRoute = require('./routes/authRoute');
 // app.get('/useradd', async (req, res) => {
 //     try {
 //         const result = await db.userDetails.findAll();
@@ -19,6 +19,8 @@ app.use(express.json());
 app.use('/role', roles);
 //users
 app.use('/users', users);
+//login
+app.use('/', authRoute);
 app.listen(3000, async () => {
     try {
         console.log('Server is running... and connected DB');

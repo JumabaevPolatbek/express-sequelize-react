@@ -176,6 +176,7 @@ Request
         }
     </pre>
 <details>
+####
 ```
 Response
 ```
@@ -186,6 +187,23 @@ Response
     <pre>
         {
             message: 'username' has added
+        }
+    </pre>
+</details>
+
+#### Auth login
+
+```http
+POST localhost:3000/login
+```
+
+<details>
+    <summary>
+        Output
+    </summary>
+    <pre>
+        {
+            token:'string'
         }
     </pre>
 </details>
