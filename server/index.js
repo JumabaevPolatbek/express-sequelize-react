@@ -5,6 +5,7 @@ const bgcrypt = require('bcrypt');
 const salt = 10;
 const roles = require('./routes/roles');
 const users = require('./routes/users');
+const languages = require('./routes/languages');
 app.use(express.json());
 const authRoute = require('./routes/authRoute');
 // app.get('/useradd', async (req, res) => {
@@ -21,6 +22,8 @@ app.use('/role', roles);
 app.use('/users', users);
 //login
 app.use('/', authRoute);
+//languages
+app.use('/lang', languages);
 app.listen(3000, async () => {
     try {
         console.log('Server is running... and connected DB');

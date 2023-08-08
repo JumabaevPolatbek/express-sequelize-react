@@ -176,10 +176,11 @@ Request
         }
     </pre>
 <details>
-####
+
 ```
 Response
 ```
+
 <details>
     <summary>
         Output
@@ -207,3 +208,15 @@ POST localhost:3000/login
         }
     </pre>
 </details>
+
+####Languages add
+
+```http
+POST localhost:3000/lang/add
+
+body={
+    langName:"english",
+    country:"USA",
+    isoCode630:"en"
+}
+```
