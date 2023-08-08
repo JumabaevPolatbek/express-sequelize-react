@@ -213,6 +213,6 @@ POST localhost:3000/lang/add
 body={
     langName:"english",
     country:"USA",
-    isoCode630:"en"
+    isoCode639:"en"
 }
 ```
