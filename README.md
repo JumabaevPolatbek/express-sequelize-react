@@ -159,23 +159,19 @@ GET localhost:3000/role/users
 POST localhost:3000/users/signup
 ```
 
-```
-Request
-```
-
-<details>
-    <summary>
-         body
-    </summary>
-    <pre>
-        {
-            username:'username',
-            password:'password',
-            email:'email@email.ru',
-            rolePermissionId:1
-        }
-    </pre>
-<details>
+    <details>
+        <summary>
+            Request body
+        </summary>
+        <pre>
+            {
+                username:'username',
+                password:'password',
+                email:'email@email.ru',
+                rolePermissionId:1
+            }
+        </pre>
+    <details>
 
 ```
 Response
